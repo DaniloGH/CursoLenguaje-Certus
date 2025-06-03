@@ -1,0 +1,36 @@
+
+.container{
+    background-color: red;
+    border: solid black;
+    padding: 20px;
+
+}
+
+.container-titulo{
+    background-color: green;
+    border: solid black;
+    width: 100px;
+}
+
+#titulo{
+    background-color: aqua;
+    border: solid blue;
+}
+
+.padre{
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    gap: 20px;
+    padding: 200px;
+    height: 200px;
+}
+.hijo{
+    border: solid black;
+    width: 100px;
+    height: 100px;
+
+}
+
+
