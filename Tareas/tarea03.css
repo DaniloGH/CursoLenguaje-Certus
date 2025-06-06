@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.caja {
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+
+/* 1. color */
+.ejemplo1 {
+    color: red;
+}
+
+/* 2. background-color */
+.ejemplo2 {
+    background-color: red;
+}
+
+/* 3. font-size */
+.ejemplo3 {
+    font-size: 24px;
+}
+
+/* 4. font-family */
+.ejemplo4 {
+    font-family: 'Courier New', monospace;
+}
+
+/* 5. text-align */
+.ejemplo5 {
+    text-align: center;
+}
+
+/* 6. border */
+.ejemplo6 {
+    border: 2px dashed red;
+}
+
+/* 7. border-radius */
+.ejemplo7 {
+    border-radius: 10px;
+}
+
+/* 8. margin */
+.ejemplo8 {
+    margin: 30px;
+}
+
+/* 9. padding */
+.ejemplo9 {
+    padding: 30px;
+}
+
+/* 10. width */
+.ejemplo10 {
+    width: 200px;
+}
+
+/* 11. height */
+.ejemplo11 {
+    height: 50px;
+}
+
+/* 12. display */
+.ejemplo12 {
+    display: inline-block;
+}
+
+/* 13. position */
+.ejemplo13 {
+    position: relative;
+    top: 10px;
+}
+
+/* 14. top / bottom / left / right */
+.ejemplo14 {
+    position: relative;
+    left: 20px;
+}
+
+/* 15. overflow */
+.ejemplo15 {
+    width: 150px;
+    height: 30px;
+    overflow: hidden;
+}
+
+/* 16. opacity */
+.ejemplo16 {
+    opacity: 0.5;
+}
+
+/* 17. box-shadow */
+.ejemplo17 {
+    box-shadow: 5px 5px 10px gray;
+}
+
+/* 18. text-decoration */
+.ejemplo18 {
+    text-decoration: underline;
+}
+
+/* 19. transition */
+.ejemplo19 {
+    transition: background-color 0.5s;
+}
+.ejemplo19:hover {
+    background-color: red;
+}
+
+/* 20. cursor */
+.ejemplo20 {
+    cursor: pointer;
+}

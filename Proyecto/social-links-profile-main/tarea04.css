@@ -1,0 +1,58 @@
+body {
+  background-color: hsl(0, 0%, 8%);
+  font-family: 'Inter', sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.profile-card {
+  background-color: hsl(0, 0%, 12%);
+  width: 300px;
+  padding: 30px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.avatar {
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 14px;
+  color: hsl(75, 94%, 57%);
+  margin: 5px 0 20px;
+}
+
+p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: hsl(0, 0%, 80%);
+}
+
+.links a {
+  display: block;
+  background-color: hsl(0, 0%, 20%);
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.links a:hover {
+  background-color: hsl(75, 94%, 57%);
+  color: black;
+}
