@@ -1,3 +1,4 @@
+/* General */
 * {
     margin: 0;
     padding: 0;
@@ -5,15 +6,20 @@
     font-family: sans-serif;
 }
 
+
+/* Body */
 body {
     background-color: #e8f5e9;
 }
 
+
+/* Logo */
 .logo {
     display: inline-block;
     padding: 10px 20px;
 }
 
+/* Buscar */
 .buscar {
     display: inline-block;
     padding: 10px;
@@ -26,6 +32,7 @@ body {
     border: 1px solid #ccc;
 }
 
+/* Botones */
 .botones {
     display: flex;
     justify-content: flex-end;
@@ -46,6 +53,8 @@ body {
     border-radius: 20px;
 }
 
+/* Banner */
+
 .banner {
     width: 100%;
     text-align: center;
@@ -59,23 +68,24 @@ body {
     border-radius: 0;
 }
 
+/* Section */
 section {
     width: 100%;
     margin: 0;
     padding: 15px 0;
-    background-color: #e8f5e9; 
+    background-color: #e8f5e9;
 }
 
 .mision {
-    background-color: #e8f5e9; /* blanco */
+    background-color: #e8f5e9; 
 }
 
 .vision {
-    background-color: #e8f5e9; /* gris claro */
+    background-color: #e8f5e9; 
 }
 
 .somos {
-    background-color: #e8f5e9; /* verde muy claro */
+    background-color: #e8f5e9; 
 }
 
 
@@ -116,6 +126,7 @@ section {
     color: #ffffff;
 }
 
+/* Footer */
 
 footer {
   display: flex;

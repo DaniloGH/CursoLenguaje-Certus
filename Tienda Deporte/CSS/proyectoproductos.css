@@ -1,3 +1,4 @@
+/* General */
 * {
     margin: 0;
     padding: 0;
@@ -5,15 +6,19 @@
     font-family: sans-serif;
 }
 
+/* Body */
+
 body {
     background-color: #e8f5e9;
 }
 
+/* Logo */
 .logo {
     display: inline-block;
     padding: 10px 20px;
 }
 
+/* Buscar */
 .buscar {
     display: inline-block;
     padding: 10px;
@@ -26,6 +31,7 @@ body {
     border: 1px solid #ccc;
 }
 
+/* Botones */
 .botones {
     display: flex;
     justify-content: flex-end;
@@ -46,6 +52,7 @@ body {
     border-radius: 20px;
 }
 
+/* Banner */
 .banner {
     width: 100%;
     text-align: center;
@@ -59,6 +66,7 @@ body {
     border-radius: 0;
 }
 
+/* Titulo Productos */
 .titulo-productos {
     text-align: center;
     margin: 30px 0 10px 0;
@@ -71,7 +79,7 @@ body {
     letter-spacing: 2px;
 }
 
-
+/* Section */
 .section {
     max-width: 1200px;
     display: grid;
@@ -104,6 +112,7 @@ body {
     margin-bottom: 10px;
 }
 
+/* Footer */
 footer {
   display: flex;
   flex-wrap: wrap;
