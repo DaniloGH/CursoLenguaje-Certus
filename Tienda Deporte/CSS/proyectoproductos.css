@@ -1,3 +1,11 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
 /* General */
 * {
     margin: 0;
@@ -6,11 +14,12 @@
     font-family: sans-serif;
 }
 
-/* Body */
 
+/* Body */
 body {
     background-color: #e8f5e9;
 }
+
 
 /* Logo */
 .logo {
@@ -52,93 +61,165 @@ body {
     border-radius: 20px;
 }
 
+
 /* Banner */
 .banner {
     width: 100%;
     text-align: center;
-    margin: 20px 0;
+    margin-bottom: 30px;
 }
 
 .banner img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 0;
 }
 
-/* Titulo Productos */
 .titulo-productos {
-    text-align: center;
-    margin: 30px 0 10px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
 }
 
 .titulo-productos h1 {
-    font-size: 2.5rem;
-    color: #222;
+    font-size: 3rem;
+    color: #0a5d36;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
+    font-weight: 900;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    position: relative;
+    text-align: center;
 }
 
-/* Section */
+/* Línea animada debajo */
+.titulo-productos h1::after {
+    content: "";
+    display: block;
+    width: 60%;
+    height: 4px;
+    background-color: #0a5d36;
+    margin: 10px auto 0;
+    border-radius: 2px;
+    animation: expand 1s ease forwards;
+}
+
+@keyframes expand {
+    from { width: 0; }
+    to { width: 60%; }
+}
+
+
+/* Sección de productos */
 .section {
     max-width: 1200px;
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 30px;
+    padding: 20px;
     margin: 0 auto 50px auto;
-    max-width: 900px;
-    border-radius: 20px;
-    background-color: #fff;
 }
 
-.section div {
+/* Tarjeta de producto */
+.producto {
     background-color: #fff;
-    padding: 15px;
+    padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.section div:hover {
-    transform: scale(1.10);
+.producto:hover {
+    transform: scale(1.05);
 }
 
-.section img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+.producto h2 {
+    font-size: 1.2rem;
     margin-bottom: 10px;
+    color: #0a5d36;
+}
+
+.section {
+    max-width: 1000px;
+    margin: 0 auto 50px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 fijo */
+    gap: 30px;
+    padding: 30px;
+}
+
+.producto img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px auto;
+    display: block
+}
+
+
+.descripcion {
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.precio {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.boton-comprar {
+    padding: 10px;
+    background-color: #0a5d36;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton-comprar:hover {
+    background-color: #128253;
 }
 
 /* Footer */
 footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  background-color: #0a5d36;
-  color: white;
-  padding: 30px 20px;
-  text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #0a5d36;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
 }
 
 .footer-section {
-  flex: 1 1 200px;
-  margin: 10px;
+    flex: 1 1 200px;
+    margin: 10px;
 }
 
 .footer-section h4 {
-  margin-bottom: 10px;
-  font-size: 18px;
-  color: hsl(0, 0%, 100%);
+    margin-bottom: 10px;
+    font-size: 18px;
 }
 
 .footer-section a {
-  color: #ccc;
-  text-decoration: none;
+    color: #ccc;
+    text-decoration: none;
 }
 
 .footer-section a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }

@@ -58,14 +58,13 @@ body {
 .banner {
     width: 100%;
     text-align: center;
-    margin: 20px 0;
+    margin-bottom: 30px;
 }
 
 .banner img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 0;
 }
 
 /* Section */

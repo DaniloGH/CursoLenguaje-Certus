@@ -1,0 +1,39 @@
+        /*<div class="player-profile">
+            <img class="player-image" src="./img/courtois.jpeg" alt="">
+            <div class="player-info">
+                <h1 class="player-name">Thibaut Courtois</h1>
+                <p class="player-age">Edad: 32</p>
+                <p class="player-position">Posición: Arquero</p>
+                <p class="player-team">Equipo: Real Madrid</p>
+            </div>
+        </div>*/
+body{
+    margin: 0;
+}
+
+.players{
+    background-color: rgb(186, 199, 210);
+    padding: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap :20px;
+
+}
+.player-profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 20px;
+}
+.player-image{
+    width: 180px;
+    border-radius: 12px;
+    height: 210px;
+    
+} 
