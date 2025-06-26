@@ -1,0 +1,160 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+/* Body */
+body {
+    background-color: #e8f5e9;
+}
+
+
+/* Logo */
+.logo {
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+/* Buscar */
+.buscar {
+    display: inline-block;
+    padding: 10px;
+    vertical-align: top;
+}
+
+.buscar input {
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+
+
+/* Botones */
+.botones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 20px;
+}
+
+.botones div {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.botones a {
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #0a5d36;
+    color: #e8f5e9;
+    border-radius: 20px;
+}
+
+/* Banner */
+
+.banner {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Section */
+section {
+    width: 100%;
+    margin: 0;
+    padding: 15px 0;
+    background-color: #e8f5e9;
+}
+
+.mision {
+    background-color: #e8f5e9; 
+}
+
+.vision {
+    background-color: #e8f5e9; 
+}
+
+.somos {
+    background-color: #e8f5e9; 
+}
+
+
+.box1, .box2, .box3 {
+    width: 90%;
+    max-width: 1200px;
+    background-color: #0a5d36;
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
+.box1 img, .box2 img, .box3 img {
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.box1 h3, .box2 h3, .box3 h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.box1 p, .box2 p, .box3 p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.box1 h3, .box2 h3, .box3 h3 {
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: #0a5d36;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.footer-section h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: hsl(0, 0%, 100%);
+}
+
+.footer-section a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}

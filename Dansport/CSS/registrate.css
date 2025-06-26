@@ -1,0 +1,108 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #e8f5e9;
+}
+
+
+.logo {
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+/* Botones */
+.botones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 20px;
+}
+
+.botones div {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.botones a {
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #0a5d36;
+    color: #e8f5e9;
+    border-radius: 20px;
+}
+
+.registro {
+  background-color: #0a5d36;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.registro-container {
+  background-color: #ffffff;
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.registro-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #0a4d3c;
+  font-size: 2rem;
+}
+
+.registro-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.registro-container label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.registro-container input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.registro-container button {
+  padding: 12px;
+  background-color: #0a4d3c;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.registro-container button:hover {
+  background-color: #0f6a53;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .registro-container {
+    padding: 20px;
+  }
+
+  .registro-container h2 {
+    font-size: 1.5rem;
+  }
+}

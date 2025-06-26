@@ -1,0 +1,108 @@
+/* login.css - Estilo específico para página de inicio de sesión */
+
+body {
+  font-family: sans-serif;
+  background-color: #e8f5e9;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.inicio{
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+}
+
+
+.inicio a {
+      text-decoration: none;
+  padding: 10px 20px;
+  background-color: #0a5d36;
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+}
+.botones a {
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #0a5d36;
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.botones a:hover {
+  background-color: #128253;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.login-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+  text-align: center;
+  color: #0a5d36;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+input[type="email"],
+input[type="password"] {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+button[type="submit"] {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #0a5d36;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #128253;
+}

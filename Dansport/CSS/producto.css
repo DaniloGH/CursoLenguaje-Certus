@@ -17,7 +17,11 @@
 
 /* Body */
 body {
-    background-color: #e8f5e9;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #eef7f1;
+  color: #1a3e2e;
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -29,15 +33,14 @@ body {
 
 /* Buscar */
 .buscar {
-    display: inline-block;
-    padding: 10px;
-    vertical-align: top;
+  text-align: center;
+  margin-bottom: 20px;
 }
-
-.buscar input {
-    padding: 5px 10px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
+.buscar input[type="text"] {
+  padding: 8px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
 
 /* Botones */
@@ -197,6 +200,33 @@ body {
 
 .boton-comprar:hover {
     background-color: #128253;
+}
+
+/* Carrito */
+#carrito {
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: #ffffff;
+  border: 2px solid #bde0c6;
+  border-radius: 15px;
+  padding: 20px 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+#carrito h2 {
+  margin-top: 0;
+  color: #14532d;
+  text-align: center;
+}
+#carrito ul {
+  list-style-type: none;
+  padding: 0;
+}
+#carrito li {
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+#carrito li:last-child {
+  border-bottom: none;
 }
 
 /* Footer */
