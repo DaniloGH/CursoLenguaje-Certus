@@ -3,41 +3,89 @@
 window.addEventListener("DOMContentLoaded", () => {
   const app = document.getElementById("app");
 
-  // Logo
+
+  
+ // Logo
   const logo = document.createElement("div");
   logo.className = "logo";
-  logo.innerHTML = `<img src="./assets/imagenes/logo - Editada.png" height="100px" alt="">`;
+  logo.innerHTML = `<img src="./assets/imagenes/Logo - Editada.png" height="100px" alt="Logo">`;
   app.appendChild(logo);
+
+  // Eslogan
+const eslogan = document.createElement("p");
+eslogan.className = "eslogan";
+eslogan.textContent = "¡Tu pasión deportiva empieza aquí! 🏆";
+app.appendChild(eslogan);
 
   // Buscar
   const buscar = document.createElement("div");
-  buscar.className = "buscar";
-  buscar.innerHTML = `
-        <div class="buscar">
-         <label for="">Buscar</label>
-          <input type="text" id="search">
-        </div>
-    <div class="botones">
-  `;
+buscar.className = "buscar";
+buscar.innerHTML = `
+  <label for="search">Buscar:</label>
+  <input type="text" id="search" placeholder="Escribe un producto...">
+  <button id="searchBtn">Buscar</button>
+  <div id="resultado" class="resultado"></div>
+`;
+app.appendChild(buscar);
 
-  app.appendChild(buscar);
+const inputBuscar = document.getElementById("search");
+const btnBuscar = document.getElementById("searchBtn");
+const resultado = document.getElementById("resultado");
+
+// FUNCIÓN: Mostrar productos como tarjetas
+function mostrarProductos(lista) {
+  resultado.innerHTML = ""; // Limpiar
+  if (lista.length === 0) {
+    resultado.innerHTML = "<p>No se encontraron resultados.</p>";
+    return;
+  }
+
+  lista.forEach(producto => {
+    const card = document.createElement("div");
+    card.className = "tarjeta";
+  card.innerHTML = `
+  <img src="${producto.imagen}" alt="${producto.nombre}">
+  <h4>${producto.nombre}</h4>
+  <p>${producto.descripcion}</p>
+  <p><strong>Precio: S/ ${producto.precio}</strong></p>
+`;
+resultado.appendChild(card);
+  });
+}
+
+// EVENTOS - Buscar
+btnBuscar.addEventListener("click", () => {
+  const valor = inputBuscar.value.toLowerCase().trim();
+
+  const encontrados = productos.filter(p =>
+    p.nombre.toLowerCase().includes(valor) ||
+    p.descripcion.toLowerCase().includes(valor) 
+  );
+
+  mostrarProductos(encontrados);
+});
+
+inputBuscar.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") btnBuscar.click();
+});
 
   // Botones
   const botones = document.createElement("div");
   botones.className = "botones";
   botones.innerHTML = `
     <div><ul><a href="./index.html">--Inicio--</a></ul></div>
-    <div><ul><a href="../Dansport/pages/producto.html">--Productos--</a></ul></div>
-    <div><ul><a href="../Dansport/pages/registrate.html">--Registrate--</a></ul></div>
-     <div><ul><a href="../Dansport/pages/login.html">--Iniciar Sesion--</a></ul></div>
+    <div><ul><a href="../public/pages/producto.html">--Productos--</a></ul></div>
+    <div><ul><a href="../public/pages/registrate.html">--Registrate--</a></ul></div>
+     <div><ul><a href="../public/pages/login.html">--Iniciar Sesion--</a></ul></div>
   `;
   app.appendChild(botones);
 
+  
   // Banner
   const banner = document.createElement("div");
   banner.className = "banner";
   banner.innerHTML = `
-    <a href="../Dansport/pages/producto.html">
+    <a href="../public/pages/producto.html">
       <img src="./assets/imagenes/banner.jpg" height="350px" alt="Banner">
     </a>
   `;
@@ -100,4 +148,6 @@ window.addEventListener("DOMContentLoaded", () => {
   `;
   app.appendChild(footer);
 });
+import { productos } from './dataproducto.js';
+
 

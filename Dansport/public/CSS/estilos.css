@@ -19,17 +19,87 @@ body {
     padding: 10px 20px;
 }
 
-/* Buscar */
-.buscar {
-    display: inline-block;
-    padding: 10px;
-    vertical-align: top;
+.eslogan {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #025940;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(90deg, #e1fce6, #d4f7e6);
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  animation: aparecer 0.7s ease-in-out;
 }
 
-.buscar input {
-    padding: 5px 10px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Buscar */
+.buscar {
+  text-align: center;
+  margin: 30px auto;
+}
+
+.buscar input[type="text"] {
+  padding: 8px 12px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.buscar button {
+  padding: 8px 14px;
+  background-color: #0a5d36;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.buscar button:hover {
+  background-color: #0a5d36;
+}
+
+.resultado {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.tarjeta {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 230px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.tarjeta h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.tarjeta p {
+  font-size: 14px;
+  color: #444;
 }
 
 
@@ -67,6 +137,7 @@ body {
     width: 100%;
     height: auto;
     display: block;
+    height: 450px
 }
 
 /* Section */

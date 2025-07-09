@@ -1,4 +1,4 @@
-// login.js - Página de inicio de sesión para Dansport
+// login.js - Página de inicio de sesión con Firebase
 
 window.addEventListener("DOMContentLoaded", () => {
   const app = document.getElementById("app");
@@ -6,14 +6,14 @@ window.addEventListener("DOMContentLoaded", () => {
   // Logo
   const logo = document.createElement("div");
   logo.className = "logo";
-  logo.innerHTML = `<img src="../assets/imagenes/logo - editada.png" height="300px" alt="">`;
+  logo.innerHTML = `<img src="../assets/imagenes/logo - editada.png" height="100px" alt="">`;
   app.appendChild(logo);
 
   // Botones
   const botones = document.createElement("div");
   botones.className = "botones";
   botones.innerHTML = `
-    <ul class= "encabezado">
+    <ul class="encabezado">
       <div class="inicio"><a href="../index.html">--Inicio--</a></div>
     </ul>
   `;
@@ -38,25 +38,21 @@ window.addEventListener("DOMContentLoaded", () => {
   `;
   app.appendChild(login);
 
-  // Evento submit
+  // 🔐 Evento de login con Firebase
   const form = document.getElementById("formLogin");
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const correo = document.getElementById("correo").value.trim();
     const contraseña = document.getElementById("contraseña").value;
 
-    const usuarioGuardado = JSON.parse(localStorage.getItem("usuarioDansport"));
-
-    if (
-      usuarioGuardado &&
-      usuarioGuardado.correo === correo &&
-      usuarioGuardado.contraseña === contraseña
-    ) {
-      alert("¡Inicio de sesión exitoso! Bienvenido, " + usuarioGuardado.nombre);
-      window.location.href = "../index.html"; // o dashboard si lo tienes
-    } else {
-      alert("Correo o contraseña incorrectos");
+    try {
+      await firebase.auth().signInWithEmailAndPassword(correo, contraseña);
+      alert("¡Inicio de sesión exitoso!");
+      window.location.href = "../index.html"; // Redirige a la página principal
+    } catch (error) {
+      console.error("Error al iniciar sesión:", error.message);
+      alert("Error: " + error.message);
     }
   });
 });

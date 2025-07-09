@@ -1,4 +1,4 @@
-// registro.js - Genera formulario de registro y gestiona usuarios
+// registro.js - Registro con Firebase Authentication
 
 window.addEventListener("DOMContentLoaded", () => {
   const app = document.getElementById("app");
@@ -45,6 +45,9 @@ window.addEventListener("DOMContentLoaded", () => {
   `;
   app.appendChild(registro);
 
+  // 🔥 Firebase Auth
+  const auth = firebase.auth();
+
   // Evento submit del formulario
   const form = document.getElementById("formRegistro");
   form.addEventListener("submit", (e) => {
@@ -56,15 +59,24 @@ window.addEventListener("DOMContentLoaded", () => {
     const confirmar = document.getElementById("confirmar").value;
 
     if (contraseña !== confirmar) {
-      alert("Las contraseñas no coinciden.");
+      alert("❌ Las contraseñas no coinciden.");
       return;
     }
 
-    // Guardar en localStorage
-    const usuario = { nombre, correo, contraseña };
-    localStorage.setItem("usuarioDansport", JSON.stringify(usuario));
+    // Crear usuario en Firebase Auth
+    auth.createUserWithEmailAndPassword(correo, contraseña)
+      .then((userCredential) => {
+        const user = userCredential.user;
 
-    alert("¡Registro exitoso! Ahora inicia sesión.");
-    window.location.href = "./login.html"; // Redirige a página de login
+        // Opcional: guardar el nombre en el perfil
+        return user.updateProfile({ displayName: nombre });
+      })
+      .then(() => {
+        alert("✅ Registro exitoso. Ahora inicia sesión.");
+        window.location.href = "./login.html";
+      })
+      .catch((error) => {
+        alert("❌ Error: " + error.message);
+      });
   });
 });
