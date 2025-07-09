@@ -1,4 +1,4 @@
-// login.js - Página de inicio de sesión con Firebase
+// login.js - Página de inicio de sesión con Firebase + Firestore
 
 window.addEventListener("DOMContentLoaded", () => {
   const app = document.getElementById("app");
@@ -38,7 +38,11 @@ window.addEventListener("DOMContentLoaded", () => {
   `;
   app.appendChild(login);
 
-  // 🔐 Evento de login con Firebase
+  // 🔐 Firebase
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+  // Evento de login
   const form = document.getElementById("formLogin");
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -47,12 +51,28 @@ window.addEventListener("DOMContentLoaded", () => {
     const contraseña = document.getElementById("contraseña").value;
 
     try {
-      await firebase.auth().signInWithEmailAndPassword(correo, contraseña);
-      alert("¡Inicio de sesión exitoso!");
-      window.location.href = "../index.html"; // Redirige a la página principal
+      const userCredential = await auth.signInWithEmailAndPassword(correo, contraseña);
+      const user = userCredential.user;
+
+      // Obtener datos del usuario desde Firestore
+      const docRef = db.collection("usuarios").doc(user.uid);
+      const docSnap = await docRef.get();
+
+      if (docSnap.exists) {
+        const datosUsuario = docSnap.data();
+        console.log("🔎 Usuario desde Firestore:", datosUsuario);
+
+        // (Opcional) Guardar en localStorage
+        localStorage.setItem("usuario", JSON.stringify(datosUsuario));
+      } else {
+        console.warn("⚠️ Usuario no encontrado en la base de datos");
+      }
+
+      alert("✅ Inicio de sesión exitoso");
+      window.location.href = "../index.html";
     } catch (error) {
       console.error("Error al iniciar sesión:", error.message);
-      alert("Error: " + error.message);
+      alert("❌ Error: " + error.message);
     }
   });
 });

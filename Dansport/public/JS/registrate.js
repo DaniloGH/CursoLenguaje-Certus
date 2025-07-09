@@ -1,4 +1,4 @@
-// registro.js - Registro con Firebase Authentication
+// registro.js - Registro con Firebase Authentication + Firestore
 
 window.addEventListener("DOMContentLoaded", () => {
   const app = document.getElementById("app");
@@ -45,8 +45,9 @@ window.addEventListener("DOMContentLoaded", () => {
   `;
   app.appendChild(registro);
 
-  // 🔥 Firebase Auth
+  // 🔥 Firebase Auth y Firestore
   const auth = firebase.auth();
+  const db = firebase.firestore();
 
   // Evento submit del formulario
   const form = document.getElementById("formRegistro");
@@ -63,19 +64,29 @@ window.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Crear usuario en Firebase Auth
+    // Crear usuario
     auth.createUserWithEmailAndPassword(correo, contraseña)
       .then((userCredential) => {
         const user = userCredential.user;
 
-        // Opcional: guardar el nombre en el perfil
-        return user.updateProfile({ displayName: nombre });
+        // Actualizar el displayName
+        return user.updateProfile({ displayName: nombre }).then(() => user);
+      })
+      .then((user) => {
+        // Guardar en Firestore
+        return db.collection("usuarios").doc(user.uid).set({
+          nombre: nombre,
+          email: correo,
+          uid: user.uid,
+          creado: new Date().toISOString()
+        });
       })
       .then(() => {
         alert("✅ Registro exitoso. Ahora inicia sesión.");
         window.location.href = "./login.html";
       })
       .catch((error) => {
+        console.error("❌ Error:", error.message);
         alert("❌ Error: " + error.message);
       });
   });

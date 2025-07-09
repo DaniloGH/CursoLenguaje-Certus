@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
   logo.className = "logo";
   logo.innerHTML = `<img src="./assets/imagenes/Logo - Editada.png" height="100px" alt="Logo">`;
   app.appendChild(logo);
-
+  
   // Eslogan
 const eslogan = document.createElement("p");
 eslogan.className = "eslogan";
@@ -70,17 +70,57 @@ inputBuscar.addEventListener("keydown", (e) => {
 });
 
   // Botones
-  const botones = document.createElement("div");
-  botones.className = "botones";
-  botones.innerHTML = `
-    <div><ul><a href="./index.html">--Inicio--</a></ul></div>
-    <div><ul><a href="../public/pages/producto.html">--Productos--</a></ul></div>
-    <div><ul><a href="../public/pages/registrate.html">--Registrate--</a></ul></div>
-     <div><ul><a href="../public/pages/login.html">--Iniciar Sesion--</a></ul></div>
-  `;
-  app.appendChild(botones);
+// Botones dinámicos según si hay sesión o no
+const botones = document.createElement("div");
+botones.className = "botones";
 
-  
+// Botón Inicio
+const btnInicio = document.createElement("a");
+btnInicio.href = "./index.html";
+btnInicio.textContent = "--Inicio--";
+botones.appendChild(btnInicio);
+
+// Botón Productos
+const btnProductos = document.createElement("a");
+btnProductos.href = "../public/pages/producto.html";
+btnProductos.textContent = "--Productos--";
+botones.appendChild(btnProductos);
+
+// Verificar si el usuario está logueado
+const usuario = JSON.parse(localStorage.getItem("usuario"));
+
+if (usuario) {
+  // 👤 Botón Perfil
+  const btnPerfil = document.createElement("a");
+  btnPerfil.href = "../public/pages/perfil.html"; // crea esta página si aún no existe
+  btnPerfil.textContent = `👤 ${usuario.nombre || "Perfil"}`;
+  botones.appendChild(btnPerfil);
+
+  // ❌ Botón Cerrar sesión
+  const btnCerrar = document.createElement("a");
+  btnCerrar.href = "#";
+  btnCerrar.textContent = "Cerrar sesión";
+  btnCerrar.addEventListener("click", () => {
+    localStorage.removeItem("usuario");
+    window.location.reload();
+  });
+  botones.appendChild(btnCerrar);
+
+} else {
+  // 🔐 Botón Registrarse
+  const btnRegistro = document.createElement("a");
+  btnRegistro.href = "../public/pages/registrate.html";
+  btnRegistro.textContent = "--Regístrate--";
+  botones.appendChild(btnRegistro);
+
+  // 🔐 Botón Iniciar sesión
+  const btnLogin = document.createElement("a");
+  btnLogin.href = "../public/pages/login.html";
+  btnLogin.textContent = "--Iniciar Sesión--";
+  botones.appendChild(btnLogin);
+}
+
+app.appendChild(botones);
   // Banner
   const banner = document.createElement("div");
   banner.className = "banner";

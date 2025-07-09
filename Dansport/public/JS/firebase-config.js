@@ -8,3 +8,8 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+
+
+// Accesos globales
+const auth = firebase.auth();
+const db = firebase.firestore(); // 🔥 Firestore

@@ -221,15 +221,58 @@ inputBuscar.addEventListener("keydown", (e) => {
 });
 
   // Navegación
-  const botones = document.createElement("div");
-  botones.className = "botones";
-  botones.innerHTML = `
-    <a href="../index.html">--Inicio--</a>
-    <a href="../pages/producto.html">--Productos--</a>
-    <a href="../pages/registrate.html">--Regístrate--</a>
-    <a href="../pages/login.html">--Iniciar Sesión--</a>
-  `;
-  app.appendChild(botones);
+  // Navegación dinámica según login
+const botones = document.createElement("div");
+botones.className = "botones";
+
+// Botón Inicio
+const btnInicio = document.createElement("a");
+btnInicio.href = "../index.html";
+btnInicio.textContent = "--Inicio--";
+botones.appendChild(btnInicio);
+
+// Botón Productos
+const btnProductos = document.createElement("a");
+btnProductos.href = "../pages/producto.html";
+btnProductos.textContent = "--Productos--";
+botones.appendChild(btnProductos);
+
+// Detectar si hay sesión
+const usuario = JSON.parse(localStorage.getItem("usuario"));
+
+if (usuario) {
+  // Botón Perfil
+  const btnPerfil = document.createElement("a");
+  btnPerfil.href = "../pages/perfil.html";
+  btnPerfil.textContent = `👤 ${usuario.nombre || "Perfil"}`;
+  botones.appendChild(btnPerfil);
+
+  // Botón Cerrar sesión
+  const btnCerrar = document.createElement("a");
+  btnCerrar.href = "#";
+  btnCerrar.textContent = "Cerrar sesión";
+  btnCerrar.addEventListener("click", () => {
+    localStorage.removeItem("usuario");
+    window.location.reload();
+  });
+  botones.appendChild(btnCerrar);
+
+} else {
+  // Botón Registro
+  const btnRegistro = document.createElement("a");
+  btnRegistro.href = "../pages/registrate.html";
+  btnRegistro.textContent = "--Regístrate--";
+  botones.appendChild(btnRegistro);
+
+  // Botón Login
+  const btnLogin = document.createElement("a");
+  btnLogin.href = "../pages/login.html";
+  btnLogin.textContent = "--Iniciar Sesión--";
+  botones.appendChild(btnLogin);
+}
+
+app.appendChild(botones);
+
 
   // Banner
   const banner = document.createElement("div");
