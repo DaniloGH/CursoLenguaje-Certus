@@ -221,7 +221,7 @@ inputBuscar.addEventListener("keydown", (e) => {
   if (e.key === "Enter") btnBuscar.click();
 });
 
-  // Navegación
+  // Botones
 const botones = document.createElement("div");
 botones.className = "botones";
 
@@ -277,7 +277,7 @@ app.appendChild(botones);
   banner.className = "banner";
   banner.innerHTML = `
     <a href="../pages/producto.html">
-      <img src="../assets/imagenes/banner.jpg" height="350px" alt="Banner">
+      <img src="../assets/imagenes/Banner.jpg" height="350px" alt="Banner">
     </a>
   `;
   app.appendChild(banner);
@@ -338,7 +338,7 @@ function mostrarPagina(pagina) {
     contenedor.appendChild(div);
   });
 
-  // Desactivar botones cuando sea necesario
+
   btnAnterior.disabled = pagina === 0;
   btnSiguiente.disabled = fin >= productos.length;
 }
@@ -369,10 +369,8 @@ carritoContenedor.style.background = "#f4f4f4";
 carritoContenedor.style.marginTop = "20px";
 carritoContenedor.style.borderRadius = "10px";
 
-// ✅ PRIMERO insertar en el DOM
 app.appendChild(carritoContenedor);
 
-// ✅ LUEGO sí puedes llamar la función
 renderizarCarrito();
 
   // Footer

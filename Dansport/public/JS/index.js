@@ -100,13 +100,13 @@ if (usuario) {
 } else {
   // 🔐 Botón Registrarse
   const btnRegistro = document.createElement("a");
-  btnRegistro.href = "../public/pages/registrate.html";
+  btnRegistro.href = "../pages/registrate.html";
   btnRegistro.textContent = "--Regístrate--";
   botones.appendChild(btnRegistro);
 
   // 🔐 Botón Iniciar sesión
   const btnLogin = document.createElement("a");
-  btnLogin.href = "../public/pages/login.html";
+  btnLogin.href = "../pages/login.html";
   btnLogin.textContent = "--Iniciar Sesión--";
   botones.appendChild(btnLogin);
 }
@@ -117,7 +117,7 @@ app.appendChild(botones);
   banner.className = "banner";
   banner.innerHTML = `
     <a href="./pages/producto.html">
-      <img src="assets/imagenes/banner.jpg" height="350px" alt="Banner">
+      <img src="./assets/imagenes/Banner.jpg" height="350px" alt="Banner">
     </a>
   `;
   app.appendChild(banner);
