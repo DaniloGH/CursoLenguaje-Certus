@@ -1,5 +1,3 @@
-// registro.js - Registro con Firebase Authentication + Firestore
-
 window.addEventListener("DOMContentLoaded", () => {
   const app = document.getElementById("app");
 

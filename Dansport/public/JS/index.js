@@ -1,22 +1,15 @@
-// main.js - Versión para página de inicio (proyectoinicio)
-
 window.addEventListener("DOMContentLoaded", () => {
   const app = document.getElementById("app");
-
-
-  
  // Logo
   const logo = document.createElement("div");
   logo.className = "logo";
   logo.innerHTML = `<img src="./assets/imagenes/Logo - Editada.png" height="100px" alt="Logo">`;
   app.appendChild(logo);
-  
   // Eslogan
 const eslogan = document.createElement("p");
 eslogan.className = "eslogan";
 eslogan.textContent = "¡Tu pasión deportiva empieza aquí! 🏆";
 app.appendChild(eslogan);
-
   // Buscar
   const buscar = document.createElement("div");
 buscar.className = "buscar";
@@ -32,7 +25,7 @@ const inputBuscar = document.getElementById("search");
 const btnBuscar = document.getElementById("searchBtn");
 const resultado = document.getElementById("resultado");
 
-// FUNCIÓN: Mostrar productos como tarjetas
+//Mostrar productos como tarjetas
 function mostrarProductos(lista) {
   resultado.innerHTML = ""; // Limpiar
   if (lista.length === 0) {
@@ -70,7 +63,6 @@ inputBuscar.addEventListener("keydown", (e) => {
 });
 
   // Botones
-// Botones dinámicos según si hay sesión o no
 const botones = document.createElement("div");
 botones.className = "botones";
 
@@ -82,7 +74,7 @@ botones.appendChild(btnInicio);
 
 // Botón Productos
 const btnProductos = document.createElement("a");
-btnProductos.href = "../public/pages/producto.html";
+btnProductos.href = "pages/producto.html";
 btnProductos.textContent = "--Productos--";
 botones.appendChild(btnProductos);
 
@@ -92,7 +84,6 @@ const usuario = JSON.parse(localStorage.getItem("usuario"));
 if (usuario) {
   // 👤 Botón Perfil
   const btnPerfil = document.createElement("a");
-  btnPerfil.href = "../public/pages/perfil.html"; // crea esta página si aún no existe
   btnPerfil.textContent = `👤 ${usuario.nombre || "Perfil"}`;
   botones.appendChild(btnPerfil);
 
@@ -125,8 +116,8 @@ app.appendChild(botones);
   const banner = document.createElement("div");
   banner.className = "banner";
   banner.innerHTML = `
-    <a href="../public/pages/producto.html">
-      <img src="./assets/imagenes/banner.jpg" height="350px" alt="Banner">
+    <a href="./pages/producto.html">
+      <img src="assets/imagenes/banner.jpg" height="350px" alt="Banner">
     </a>
   `;
   app.appendChild(banner);
@@ -189,5 +180,3 @@ app.appendChild(botones);
   app.appendChild(footer);
 });
 import { productos } from './dataproducto.js';
-
-

@@ -1,3 +1,4 @@
+//Productos
 const productos = [
   { 
     id: 1,
@@ -86,7 +87,7 @@ const productos = [
   }
 ];
 const carrito = [];
-// FUNCIONES DEL CARRITO
+// Funciones del carrito
 function agregarAlCarrito(producto) {
   const existe = carrito.find((p) => p.id === producto.id);
   if (existe) {
@@ -181,7 +182,7 @@ const inputBuscar = document.getElementById("search");
 const btnBuscar = document.getElementById("searchBtn");
 const resultado = document.getElementById("resultado");
 
-// FUNCIÓN: Mostrar productos como tarjetas
+//Mostrar productos como tarjetas
 function mostrarProductos(lista) {
   resultado.innerHTML = ""; // Limpiar
   if (lista.length === 0) {
@@ -221,7 +222,6 @@ inputBuscar.addEventListener("keydown", (e) => {
 });
 
   // Navegación
-  // Navegación dinámica según login
 const botones = document.createElement("div");
 botones.className = "botones";
 
@@ -237,13 +237,12 @@ btnProductos.href = "../pages/producto.html";
 btnProductos.textContent = "--Productos--";
 botones.appendChild(btnProductos);
 
-// Detectar si hay sesión
+// Si hay usuario logueado
 const usuario = JSON.parse(localStorage.getItem("usuario"));
 
 if (usuario) {
   // Botón Perfil
   const btnPerfil = document.createElement("a");
-  btnPerfil.href = "../pages/perfil.html";
   btnPerfil.textContent = `👤 ${usuario.nombre || "Perfil"}`;
   botones.appendChild(btnPerfil);
 
@@ -261,18 +260,17 @@ if (usuario) {
   // Botón Registro
   const btnRegistro = document.createElement("a");
   btnRegistro.href = "../pages/registrate.html";
-  btnRegistro.textContent = "--Regístrate--";
+  btnRegistro.textContent = "--Registrarse--";
   botones.appendChild(btnRegistro);
 
   // Botón Login
   const btnLogin = document.createElement("a");
   btnLogin.href = "../pages/login.html";
-  btnLogin.textContent = "--Iniciar Sesión--";
+  btnLogin.textContent = "--Iniciar sesión--";
   botones.appendChild(btnLogin);
 }
 
 app.appendChild(botones);
-
 
   // Banner
   const banner = document.createElement("div");
@@ -291,7 +289,7 @@ app.appendChild(botones);
   app.appendChild(titulo);
 
   // Sección productos
-// Crear sección del carrusel
+// Carrusel
 const section = document.createElement("section");
 section.className = "carrusel";
 
@@ -306,16 +304,15 @@ section.innerHTML = `
 
 app.appendChild(section);
 
-// Variables
 const contenedor = document.getElementById("contenedorProductos");
 const btnAnterior = document.getElementById("btnAnterior");
 const btnSiguiente = document.getElementById("btnSiguiente");
 
 let paginaActual = 0;
-const productosPorPagina = 4; // 2x2
+const productosPorPagina = 4; 
 
 function mostrarPagina(pagina) {
-  contenedor.innerHTML = ""; // Limpiar productos anteriores
+  contenedor.innerHTML = ""; 
 
   const inicio = pagina * productosPorPagina;
   const fin = inicio + productosPorPagina;
